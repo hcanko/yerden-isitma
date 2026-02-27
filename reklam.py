@@ -3,6 +3,17 @@ import time
 
 # Sayfa ayarları - Müşteriye şık görünmesi için
 st.set_page_config(page_title="Yerden Isıtma Maliyet Hesaplayıcı", layout="centered", page_icon="🔥")
+# --- GİZLİLİK VE KURUMSALLIK MODÜLÜ ---
+# Sağ üstteki menüyü, GitHub logosunu ve en alttaki Streamlit yazısını gizler.
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
+        [data-testid="stToolbar"] {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 st.image("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000", use_container_width=True) 
 st.title("🔥 Yerden Isıtma Bütçenizi Hesaplayın")
