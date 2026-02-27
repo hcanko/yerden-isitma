@@ -2,6 +2,17 @@ import streamlit as st
 import math
 
 st.set_page_config(page_title="Usta İşi Tesisat Hesaplayıcı", layout="centered", page_icon="🔧")
+# --- GİZLİLİK VE KURUMSALLIK MODÜLÜ ---
+# Sağ üstteki menüyü, GitHub logosunu ve en alttaki Streamlit yazısını gizler.
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
+        [data-testid="stToolbar"] {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 st.title("🔧 Detaylı Saha Teklif Aracı")
 st.markdown("Tam metraj boru hesabı ve kalem kalem detaylandırılmış aksesuar listesiyle şeffaf müşteri teklifleri oluşturun.")
@@ -120,3 +131,4 @@ AÇIKLAMA                                         MİKTAR       TOPLAM TUTAR
     
     # Ustanın arka plan kontrolü
     st.info(f"🔒 **Usta Gizli Paneli:** Bu projenin size olan net malzeme gelişi **{zemin_saf_maliyet + aksesuar_saf_maliyet:,.0f} TL**'dir. Müşteriye verilen fiyat üzerinden kalan işçilik/kâr payınız **{genel_toplam - (zemin_saf_maliyet + aksesuar_saf_maliyet):,.0f} TL**'dir.")
+
